@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { TextField,Button } from "@mui/material";
+import { TextField ,Button } from "@mui/material";
+
 //manipula el estado de la variable
 
 
@@ -37,12 +38,14 @@ const handleInputValues = (e)=>{
         <div>
             <form>
                 <h4>Formulario de usuario </h4>
-                <h5>Nombre</h5>
+                <h5>Nombre :  { valorDeinputs.nombre}</h5>
                 <h5>Apellido</h5>
                 <h5>Correo</h5>
                 <h5>Password</h5>
                 <p>
                     <TextField
+                    error={false}
+                    onChange={handleInputValues}
                     type="text"
                     name= "nombre"
                     variant= "outlined"
@@ -53,12 +56,12 @@ const handleInputValues = (e)=>{
                     type="text"
                     name= "apellido"
                     variant= "outlined"
-                    label="ingrese su nombre"/>
+                    label="ingrese su apellido"/>
                 </p>
                 <p>
-                    {/* <Button variant ="contained" color="danger" type="submit">
+                    <Button variant ="contained" type="submit">
                         Registrar
-                    </Button> */}
+                    </Button>
                 </p>
              
             </form>

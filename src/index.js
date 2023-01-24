@@ -5,11 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './Prueba';
 import FormUser from './FormUser';
+import PrimerComponente from './AppEjemplo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <FormUser/>
+     <PrimerComponente/>
   </React.StrictMode>
 );
 
