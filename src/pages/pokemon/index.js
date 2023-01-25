@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getDataFromPokemon } from "../../services";
+import PokemonDetail from "../../components/PokemonDetail";
 import { Container, Card, CardContent, CardMedia, Grid } from "@mui/material";
 
 const Home = () => {
@@ -45,7 +46,8 @@ const Home = () => {
                 <CardContent className="center">
                   <h3 className="name-pokemon">{pokemon.name}</h3>
                 </CardContent>
-              </Card>
+                <PokemonDetail/>
+              </Card>              
             </Grid>
           ))}
       </Grid>
