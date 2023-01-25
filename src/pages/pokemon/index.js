@@ -30,10 +30,10 @@ const Home = () => {
 
   return (
     <Container>
-      <h1>POKEDEX</h1>
+      <h1 className="title-pokemon">POKEDEX g19</h1>
       <Grid container spacing={3}>
         {pokemons.length > 0 &&
-          pokemons.map((pokemon, index) => {
+          pokemons.map((pokemon, index) => (
             //aca el codigo visual
             <Grid item md={4} lg={4} sm={12} xs={12}>
               <Card className="card-pokemon">
@@ -42,12 +42,12 @@ const Home = () => {
                   className="img-pokemon"
                   image={`${imgUrl}${index + 1}.svg`}
                 />
-                <CardContent>
+                <CardContent className="center">
                   <h3 className="name-pokemon">{pokemon.name}</h3>
                 </CardContent>
               </Card>
-            </Grid>;
-          })}
+            </Grid>
+          ))}
       </Grid>
     </Container>
   );
