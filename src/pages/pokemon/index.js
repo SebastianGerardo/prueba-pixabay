@@ -46,7 +46,7 @@ const Home = () => {
                 <CardContent className="center">
                   <h3 className="name-pokemon">{pokemon.name}</h3>
                 </CardContent>
-                <PokemonDetail/>
+                <PokemonDetail nombre={pokemon.name} url={pokemon.url}/>
               </Card>              
             </Grid>
           ))}
