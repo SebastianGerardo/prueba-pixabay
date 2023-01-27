@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom'
 import React from 'react'
 
 const Header = () => {
@@ -6,7 +6,7 @@ const Header = () => {
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">Logo</a>
+    <Link className="navbar-brand" to="/">Logo</Link>
     <a className="navbar-brand" href="./">Pokemon</a>
     <a className="navbar-brand" href="./formulario">Formulario</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
