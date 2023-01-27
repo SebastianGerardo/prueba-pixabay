@@ -23,9 +23,9 @@ const Flags = () => {
     const response = await getDataFromPokemon(
       "https://restcountries.com/v3.1/all"
     );
-    const data = await response.json();
-    setCountries(data);
-    console.log(data);
+
+    setCountries(response);
+   
   };
 
    const handleRegion = async (e)=>{
@@ -48,15 +48,15 @@ const Flags = () => {
 const handleSearchCountry =(e)=>{
     const countryName = e.target.value
 
-    if (countryName.lenght === 0){
+    if (countryName.length === 0){
         fetchCountries();
     }
 
-    if(countryName.lenght > 3){
+    if(countryName.length > 3){
         //aca debemos iniciar la busqyeda
         //para pdoer hacer la busqueda debo transforma todo a text UPPERCASE  o lowercase 
         const filterCountries =  countries.filter((country)=>
-        country.name.official.toUpperCase().includes(countryName.toUpperCase())
+        country.name.common.toUpperCase().includes(countryName.toUpperCase())
         );
         setCountries(filterCountries);
     }
@@ -102,7 +102,7 @@ const handleSearchCountry =(e)=>{
                         height ={200}
                         image={country.flags.svg}/>
                         <CardContent>
-                            <h4>{country.name.official}</h4>
+                            <h4>{country.name.common}</h4>
                             <p>Population:{country.population}</p>
                         </CardContent>                        
                     </Card>
@@ -110,8 +110,8 @@ const handleSearchCountry =(e)=>{
                 ))
         ):(
             <div>
-                {/* <CircularProgress/>
-                <h4>Cargando...</h4> */}
+                <CircularProgress/>
+                <h4>Cargando...</h4>
             </div>
         )}
       </Grid>
