@@ -37,19 +37,46 @@ const PokemonDetail = (props) => {
             <div>
               <h2>{props.nombre}</h2>
               <Grid container>
-                <Grid item md ={6}>
+              <Grid item md={6}>
                   <h4>Habilidades</h4>
-                  {pokemonData.abilities.map((abilitie)=>(
-                        <Chip
-                        label={abilitie.ability.name}/>
+                  {pokemonData.abilities.map((abilitie) => (
+                    <Chip
+                      label={abilitie.ability.name}
+                      color="primary"
+                      sx={{ marginRight: 2 }}
+                    />
+                  ))}
+                  <h4>Datos</h4>
+                  {pokemonData.types.map((type) => (
+                    <Chip
+                      label={type.type.name}
+                      color="warning"
+                      sx={{ marginRight: 2 }}
+                    />
+                  ))} 
+                  <Chip
+                    label={`${pokemonData.height / 10} m`}
+                    color="success"
+                    sx={{ marginRight: 2 }}
+                  />
+                  <Chip
+                    label={`${pokemonData.weight / 10} kg`}
+                    color="success"
+                    sx={{ marginRight: 2 }}
+                  />
+                  <h4>Puntos de base</h4>
+                  {pokemonData.stats.map((stat) => (
+                    <div>
+                      <h5>{stat.stat.name}</h5>
+                      <Slider
+                        defaultValue={+stat.base_stat}
+                        aria-label="Always visible"
+                        valueLabelDisplay="on"
+                        disabled
+                      />
+                    </div>
                   ))}
                 </Grid>
-                <Grid item sm={6}>
-                  <img
-                  src={pokemonData.sprites.versions["generation-iii"]["firered-leafgreen"]["back_shiny"]} width={100}/>
-
-                </Grid>
-
               </Grid>
             </div>
           )}
