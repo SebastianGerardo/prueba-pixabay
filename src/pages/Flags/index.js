@@ -29,7 +29,7 @@ const Flags = () => {
    
   };
 
-   const handleRegion = async (e)=>{
+  const handleRegion = async (e)=>{
     setRegion(e.target.value)
     //vamos a evaluar si el valor es igual a all entonces ejecuitas la funcion fetchconuntries
     if(e.target.value ==="all"){
@@ -43,7 +43,7 @@ const Flags = () => {
     `https://restcountries.com/v3.1/region/${e.target.value}`
    );
    setCountries(response)
-};
+  };
 
 //vamos a crear una funcion la cual se encargue de buscar los paises...
 const handleSearchCountry =(e)=>{

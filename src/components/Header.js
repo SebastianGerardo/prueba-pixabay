@@ -19,7 +19,7 @@ const Header = () => {
           <Link className="nav-link" to="flags">Banderas</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Link</a>
+          <Link to="/pixabay" className="nav-link" href="#">Pixabay</Link>
         </li>
         {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -39,7 +39,39 @@ const Detail = () => {
             <img src={country.flags.svg} width={400} alt="banderas" />
           </Grid>
           <Grid item md={6}>
-            
+            <h3>{country.name.official}</h3>
+            <Grid container spacing={3} mt={1}>
+                <Grid item md={6}>
+                  <p>
+                    <b>Native Name:</b> {country.name.common}
+                  </p>
+                  <p>
+                    <b>Population:</b> {country.population}
+                  </p>
+                  <p>
+                    <b>Region:</b> {country.region}
+                  </p>
+                  <p>
+                    <b>Sub Region:</b> {country.subregion}
+                  </p>
+                  <p>
+                    <b>Capital:</b> {country.capital[0]}
+                  </p>
+                </Grid>
+                <Grid item md={6}>
+                  <p>
+                    <b>Top Level Domain:</b> {country.tld}
+                  </p>
+                  <p>
+                    <b>Currencies:</b> {Object.keys(country.currencies).map((currency) => (
+                      <span>{currency}</span>
+                    ))}
+                  </p>
+                  <p>
+                    <b>Languages:</b> {Object.values(country.languages)[0]}
+                  </p>
+                </Grid>
+            </Grid>            
           </Grid>
         </Grid>
       )}
