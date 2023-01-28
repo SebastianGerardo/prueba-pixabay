@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import{Link} from "react-router-dom"
 import {
   Card,
   CardContent,
@@ -96,6 +97,7 @@ const handleSearchCountry =(e)=>{
         {countries.length > 0 ? (
             countries.map((country)=>(
                 <Grid item md ={3} xs={12}>
+                 <Link to={`/flags/detail/${country.name.common}`}>
                     <Card>
                         <CardMedia
                         component ="img"
@@ -106,6 +108,7 @@ const handleSearchCountry =(e)=>{
                             <p>Population:{country.population}</p>
                         </CardContent>                        
                     </Card>
+                    </Link>
                 </Grid>
                 ))
         ):(
