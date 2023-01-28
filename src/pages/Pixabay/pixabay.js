@@ -8,11 +8,10 @@ import { CardMedia, Container,
 const Pixabay = () => {
     
     const [ image, setImage ] = useState([]);
-    const [ filter, setFilter ] = useState("");
 
     const fetchImage = async() => {
         const response = await getDataFromPokemon(
-            `https://pixabay.com/api/?key=23400745-88c9fb4b47626b42faf23986e&q=7D&per_page=50`
+            `https://pixabay.com/api/?key=23400745-88c9fb4b47626b42faf23986e&q=all&per_page=50`
             );
         
         setImage(response.hits);
@@ -24,22 +23,22 @@ const Pixabay = () => {
 
     
     const searchImage = async(e) => {
-        setFilter(e.target.value);
+        const event = e.target.value
 
-        setImage([]);
-        const response = await getDataFromPokemon(`https://pixabay.com/api/?key=23400745-88c9fb4b47626b42faf23986e&q=${e.target.value}&per_page=50`);
-        
-        console.log(response.hits)
-        setImage(response.hits);
-
-        if (filter === 0) {
+        if (event.length === 0) {
             fetchImage();
+        } 
+
+        if (event.length > 3) {
+            filterImage(event);
         }
 
-        if (filter.length > 3) {
-            const filterImage = image.filter((image) => image.id.toUpperCase().includes(filter.toUpperCase()));
-            setImage(filterImage);
-        }
+    }
+
+    const filterImage = async (e) => {
+        const response = await getDataFromPokemon(`https://pixabay.com/api/?key=23400745-88c9fb4b47626b42faf23986e&q=${e}&per_page=50`);
+
+        setImage(response.hits);
     }
 
     return (
