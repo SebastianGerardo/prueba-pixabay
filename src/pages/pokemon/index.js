@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <Container>
-      <h1 className="title-pokemon">POKEDEX g19</h1>
+      <h1 className="title-pokemon">POKEDEX</h1>
       <Grid container spacing={3}>
         {pokemons.length > 0 &&
           pokemons.map((pokemon, index) => (
