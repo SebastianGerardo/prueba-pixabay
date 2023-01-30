@@ -11,10 +11,8 @@ const PokemonDetail = (props) => {
     const pokemon = await getDataFromPokemon(props.url);
     setPokemonData(pokemon);
   };
-  //vamos hacer un funcion la cual se encargue de cambiar el estado
 
   const handleOpenDialog = async () => {
-    //cuando se abre el modal es true
     if (!abrir) {
       await fecthDetailFromPokemon();
     }
@@ -22,7 +20,7 @@ const PokemonDetail = (props) => {
   };
 
   return (
-    <div>
+    <div className="btn-detail">
       <Button onClick={handleOpenDialog} variant="contained" color="primary">
         Ver Detalle
       </Button>

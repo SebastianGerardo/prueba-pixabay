@@ -69,3 +69,8 @@ code {
   -webkit-box-shadow: -2px 1px 30px -6px rgba(0,0,0,0.76);
   -moz-box-shadow: -2px 1px 30px -6px rgba(0,0,0,0.76);
 }
+
+.btn-detail {
+  display: flex;
+  justify-content: center;
+}

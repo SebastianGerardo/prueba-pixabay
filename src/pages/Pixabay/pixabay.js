@@ -6,7 +6,6 @@ import { CardMedia, Container,
 
 
 const Pixabay = () => {
-    
     const [ image, setImage ] = useState([]);
 
     const fetchImage = async() => {
@@ -22,7 +21,7 @@ const Pixabay = () => {
     }, [])
 
     
-    const searchImage = async(e) => {
+    const searchImage = (e) => {
         const event = e.target.value
 
         if (event.length === 0) {

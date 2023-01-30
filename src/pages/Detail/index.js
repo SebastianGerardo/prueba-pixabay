@@ -5,7 +5,6 @@ import { Container, Grid, Button, Chip } from "@mui/material";
 import React from "react";
 
 const Detail = () => {
-  //hooks de parametro --
   const { name } = useParams();
   const history = useNavigate();
 

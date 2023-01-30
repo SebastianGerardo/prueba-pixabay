@@ -13,7 +13,6 @@ import {
   Select,
   MenuItem,CircularProgress
 } from "@mui/material";
-//es la funcion que consumira el servicio API.
 import { getDataFromPokemon } from "../../services";
 
 const Flags = () => {
@@ -31,13 +30,11 @@ const Flags = () => {
 
   const handleRegion = async (e)=>{
     setRegion(e.target.value)
-    //vamos a evaluar si el valor es igual a all entonces ejecuitas la funcion fetchconuntries
     if(e.target.value ==="all"){
         fetchCountries();
         return;
     }   
 
-   //primero debemos limpiar para poder llenarlo con la nueva informacion 
    setCountries([]);
    const response = await getDataFromPokemon(
     `https://restcountries.com/v3.1/region/${e.target.value}`
@@ -45,7 +42,6 @@ const Flags = () => {
    setCountries(response)
   };
 
-//vamos a crear una funcion la cual se encargue de buscar los paises...
 const handleSearchCountry =(e)=>{
     const countryName = e.target.value
 
@@ -54,8 +50,6 @@ const handleSearchCountry =(e)=>{
     }
 
     if(countryName.length > 3){
-        //aca debemos iniciar la busqyeda
-        //para pdoer hacer la busqueda debo transforma todo a text UPPERCASE  o lowercase 
         const filterCountries =  countries.filter((country)=>
         country.name.common.toUpperCase().includes(countryName.toUpperCase())
         );
